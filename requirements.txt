@@ -1,4 +1,3 @@
-telegram.ext
 telegram-bot
 cricket.py
 requests
