@@ -36,6 +36,7 @@ def valid(bot,update):
 
 def textMsg(bot,update):
     msg = str(update.effective_message.text)
+    print(msg) 
     global var
     if msg == 'Next page':
         if var == 0:
