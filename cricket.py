@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from emoji import emojize
 
 url = "https://www.cricbuzz.com/cricket-match/live-scores"
 live_match = []
