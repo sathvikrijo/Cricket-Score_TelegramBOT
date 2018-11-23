@@ -1,7 +1,8 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from handles import *
 import handles
-botToken = "741591211:AAF9ZNd6kASuGMeeM6sO5TvzIFngWPgVdUY"
+from boto.s3.connection import S3Connection
+botToken = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
 
 def main():
     updater = Updater(botToken)
