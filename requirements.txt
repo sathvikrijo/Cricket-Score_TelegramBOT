@@ -1,5 +1,4 @@
 python-telegram-bot
 requests
 bs4
-boto
 os
