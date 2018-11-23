@@ -1,10 +1,11 @@
 # Cricket-Score TelegramBOT
-A bot which will show up all the live cricket matches scores and recently ended matches. Try it now [@askRijo]() {not yet hosted}
+A bot which will show up all the live cricket matches scores and recently ended matches. Try it now [@askRijo](https://t.me/sthkrj_bot) {not yet hosted, the bot is not online}
 
 # Project Info
 - I combined the power of webscrapping and telegram api to build this Bot
 - Meanwhile, this **idea is inspired from _my friend_** [SivaRK](https://github.com/sivajayaraman) who he built this cricket-score bot with the commands. I remodelled it to GUI based one and more user-friendly.
 - Started to build a mutli-function bot which features Cricket-score, Anna-univ updates, Facts about this day and Game bot. But ended with this.
+- You can find the bot [here](https://t.me/sthkrj_bot)
 - Working on to build that multi-function bot
 
 # Created using
