@@ -5,6 +5,7 @@ import os
 botToken = os.environ['botToken']
 
 def main():
+    print(botToken)
     updater = Updater(botToken)
     dp = updater.dispatcher
     updater.start_polling()
