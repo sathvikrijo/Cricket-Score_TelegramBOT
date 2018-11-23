@@ -1,6 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from handles import *
-import scrap
 import handles
 botToken = "741591211:AAF9ZNd6kASuGMeeM6sO5TvzIFngWPgVdUY"
 
