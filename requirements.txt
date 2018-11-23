@@ -1,8 +1,6 @@
-telegram-bot
-cricket.py
+python-telegram-bot
 requests
 bs4
+cricket.py
 scrap.py
 handles.py
-emoji_handler.py
-emoji
