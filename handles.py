@@ -6,10 +6,14 @@ import cricket
 keyboardPage1 = [[KeyboardButton("1"),KeyboardButton("2"),KeyboardButton("3")],[KeyboardButton("4"),KeyboardButton("5"),KeyboardButton("6")],[KeyboardButton("7"),KeyboardButton("8"),KeyboardButton("9")],[KeyboardButton("10"),KeyboardButton("11"),KeyboardButton("Next page")]]
 keyboardPage2 = [[KeyboardButton("12"),KeyboardButton("13"),KeyboardButton("14")],[KeyboardButton("15"),KeyboardButton("16"),KeyboardButton("17")],[KeyboardButton("18"),KeyboardButton("19"),KeyboardButton("20")],[KeyboardButton("Prev page"),KeyboardButton("21"),KeyboardButton("Next page")]]
 keyboardPage3 = [[KeyboardButton("22"),KeyboardButton("23"),KeyboardButton("24")],[KeyboardButton("25"),KeyboardButton("26"),KeyboardButton("27")],[KeyboardButton("28"),KeyboardButton("29"),KeyboardButton("30")],[KeyboardButton("Prev page"),KeyboardButton("31"),KeyboardButton("32")]]
+keyboardPage4 = [[KeyboardButton("33"),KeyboardButton("34"),KeyboardButton("35")],[KeyboardButton("36"),KeyboardButton("37"),KeyboardButton("38")],[KeyboardButton("39"),KeyboardButton("40"),KeyboardButton("41")],[KeyboardButton("Prev page"),KeyboardButton("42"),KeyboardButton("Next page")]]
+keyboardPage5 = [[KeyboardButton("43"),KeyboardButton("44"),KeyboardButton("45")],[KeyboardButton("46"),KeyboardButton("47"),KeyboardButton("48")],[KeyboardButton("49"),KeyboardButton("50"),KeyboardButton("51")],[KeyboardButton("Prev page"),KeyboardButton("52"),KeyboardButton("53")]]
 #sports_reply = ReplyKeyboardMarkup(keyboardPage0,True,False)
 no_reply1 = ReplyKeyboardMarkup(keyboardPage1,True,False)
 no_reply2 = ReplyKeyboardMarkup(keyboardPage2,True,False)
 no_reply3 = ReplyKeyboardMarkup(keyboardPage3,True,False)
+no_reply4 = ReplyKeyboardMarkup(keyboardPage4,True,False)
+no_reply5 = ReplyKeyboardMarkup(keyboardPage5,True,False)
 var = 0
 
 def start(bot,update):
@@ -40,6 +44,12 @@ def textMsg(bot,update):
         elif var == 1:
             bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply3)
             var+=1
+        elif var == 2:
+            bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply4)
+            var+=1
+        elif var == 3:
+            bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply5)
+            var+=1
         print(var)
     elif msg == 'Prev page':
         if var == 1:
@@ -47,6 +57,12 @@ def textMsg(bot,update):
             var-=1
         elif var == 2:
             bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply2)
+            var-=1
+        elif var == 3:
+            bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply3)
+            var-=1
+        elif var == 4:
+            bot.send_message(chat_id=update.message.chat_id, text=msg, reply_markup=no_reply4)
             var-=1
         print(var)
     else:
