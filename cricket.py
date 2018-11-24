@@ -24,6 +24,13 @@ def match():
 
     global live_match
     global completed_match
+    global live_match_links
+    global completed_match_inks
+    
+    live_match.clear()
+    completed_match.clear()
+    live_match_links.clear()
+    completed_match_links.clear()
 
     for head in headers:
         match_live = head.find_all(class_="cb-lv-scrs-well cb-lv-scrs-well-live")
