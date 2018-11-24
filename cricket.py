@@ -80,6 +80,9 @@ def extract_live_match(match_url):
     prevSession = main_content.find_all(class_="cb-col cb-col-67 cb-scrs-wrp")
     prevSession = prevSession[0]
     info = prevSession.find_all(class_="cb-text-stump")
+    if info == []:
+        info = prevSession.find_all(class_="cb-text-inprogress")
+    info = info[0].contents[0]
     prevSession = prevSession.find(class_="cb-text-gray cb-font-16")
     if prevSession is not None:
         prevSession = prevSession.contents[0][1:]
@@ -93,11 +96,7 @@ def extract_live_match(match_url):
     #match_current_status =  match_current_status[0]
 
     match_details += "Current session: " + match_score.contents[0][1:] + "\n"
-    match_details += "Current RR: " + rr +"\n"
-
-    if info != []:
-        info = info[0].contents[0]
-        match_details += info
+    match_details += "Current RR: " + rr +"\n" + info
 
     print(match_details)
     print()
