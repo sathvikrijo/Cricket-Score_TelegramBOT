@@ -106,24 +106,30 @@ def extract_live_match(match_url):
 def extract_completed_match(match_url):
     match_page = requests.get("https://www.cricbuzz.com/" + match_url)
     soup = BeautifulSoup(match_page.text,'html.parser')
-
+    
+    abandon = 0
     match_details = ""
+    
     main_content = soup.find(class_="cb-col cb-col-67 cb-nws-lft-col cb-comm-pg")
     result = main_content.find(class_="cb-col cb-col-100 cb-min-stts cb-text-mom")
     if result is None:
         result = main_content.find(class_="cb-col cb-col-100 cb-min-stts cb-text-complete")
+        if result is None:
+            result = soup.find(class_="cb-col cb-col-100 cb-font-18 cb-toss-sts cb-text-abandon")
+            abandon = 1
     result = result.contents[0]
 
-    match_header = main_content.find_all(class_="cb-col cb-col-100 cb-col-scores")
-    match_header = match_header[0]
+    if abandon == 0:
+        match_header = main_content.find_all(class_="cb-col cb-col-100 cb-col-scores")
+        match_header = match_header[0]
 
-    Session = match_header.find(class_="cb-col cb-col-100 cb-min-tm cb-text-gray")
-    match_details += Session.contents[0] + "\n"
+        Session = match_header.find(class_="cb-col cb-col-100 cb-min-tm cb-text-gray")
+        match_details += Session.contents[0] + "\n"
 
-    Session = match_header.find(class_="cb-col cb-col-100 cb-min-tm")
-    match_details += Session.contents[0] + "\n"
+        Session = match_header.find(class_="cb-col cb-col-100 cb-min-tm")
+        match_details += Session.contents[0] + "\n\n"
 
-    match_details += "\n" + result
+    match_details += result
     print(match_details)
     return match_details
 
