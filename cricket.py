@@ -13,7 +13,6 @@ live_match_len = 0
 completed_match_len = 0
 
 def match():
-
     page = requests.get(url)
     soup = BeautifulSoup(page.text,'html.parser')
     headers = soup.find_all(class_="cb-col cb-col-100 cb-lv-main")
@@ -82,6 +81,8 @@ def extract_live_match(match_url):
     info = prevSession.find_all(class_="cb-text-stump")
     if info == []:
         info = prevSession.find_all(class_="cb-text-inprogress")
+        if info == []:
+            info = prevSession.find_all(class_="cb-text-lunch")
     info = info[0].contents[0]
     prevSession = prevSession.find(class_="cb-text-gray cb-font-16")
     if prevSession is not None:
