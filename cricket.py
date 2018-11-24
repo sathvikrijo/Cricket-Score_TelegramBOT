@@ -39,19 +39,22 @@ def match():
     global completed_match_len
     live_match_len = len(live_match)
     completed_match_len = len(completed_match)
+    
+    print(live_match_len)
+    print(completed_match_len)
 
     all_matches_string = ""
     count = 1
 
     all_matches_string += "*************LIVE MATCHES*************\n"
-    for i in range(0,len(live_match)):
+    for i in range(0,live_match_len):
         print(live_match[i])
         print(url + live_match_links[i])
         all_matches_string += str(count) + " >>> " + live_match[i] + "\n\n"
         count+=1
 
     all_matches_string += "*********COMPLETED MATCHES*********\n"
-    for i in range(0,len(completed_match)):
+    for i in range(0,completed_match_len):
         print(completed_match[i])
         print(url + completed_match_links[i])
         all_matches_string += str(count) + " >>> " + completed_match[i] + "\n\n"
