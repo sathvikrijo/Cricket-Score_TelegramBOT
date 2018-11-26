@@ -51,20 +51,24 @@ def match():
 
     all_matches_string = ""
     count = 1
+    
+    if live_match_len > 0:
+        all_matches_string += "*************LIVE MATCHES*************\n"
+        for i in range(0,live_match_len):
+            print(live_match[i])
+            print(url + live_match_links[i])
+            all_matches_string += str(count) + " >>> " + live_match[i] + "\n\n"
+            count+=1
+        all_matches_string += "\n\n\n"
 
-    all_matches_string += "*************LIVE MATCHES*************\n"
-    for i in range(0,live_match_len):
-        print(live_match[i])
-        print(url + live_match_links[i])
-        all_matches_string += str(count) + " >>> " + live_match[i] + "\n\n"
-        count+=1
-
-    all_matches_string += "*********COMPLETED MATCHES*********\n"
-    for i in range(0,completed_match_len):
-        print(completed_match[i])
-        print(url + completed_match_links[i])
-        all_matches_string += str(count) + " >>> " + completed_match[i] + "\n\n"
-        count+=1
+    if completed_match_len > 0:
+        all_matches_string += "*********COMPLETED MATCHES*********\n"
+        for i in range(0,completed_match_len):
+            print(completed_match[i])
+            print(url + completed_match_links[i])
+            all_matches_string += str(count) + " >>> " + completed_match[i] + "\n\n"
+            count+=1
+            
     return all_matches_string
 
 def extract_live_match(match_url):
