@@ -28,7 +28,7 @@ def start(bot,update):
                     #+ "1  >>  Cricket Scores\n" + "2  >>  Football Scores\n" + "3  >>  Badmiton Scores"
     welcome_msg = "Welcome " + user_name + "\nI'm your bot speaking.\nChoose any of the following matches from above😎👆"
     matcheses = match()
-    bot.send_message(chat_id=update.message.chat.id, text=matcheses)
+    bot.send_message(chat_id=update.message.chat.id, text=matcheses, parse_mode=telegram.ParseMode.MARKDOWN)
     bot.send_message(chat_id=update.message.chat.id, text=welcome_msg, reply_markup=no_reply1)
 
 def valid(bot,update):
