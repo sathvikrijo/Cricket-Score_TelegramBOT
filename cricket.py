@@ -77,6 +77,8 @@ def extract_live_match(match_url):
     match_page = requests.get("https://www.cricbuzz.com/" + match_url)
     soup = BeautifulSoup(match_page.text,'html.parser')
 
+    match_status = ["cb-text-stump", "cb-text-inprogress", "cb-text-lunch", "cb-text-rain", "cb-text-tea"]
+    
     match_details = ""
     main_content = soup.find(class_="cb-col cb-col-67 cb-nws-lft-col cb-comm-pg")
 
@@ -84,15 +86,13 @@ def extract_live_match(match_url):
 
     prevSession = main_content.find_all(class_="cb-col cb-col-67 cb-scrs-wrp")
     prevSession = prevSession[0]
-    info = prevSession.find_all(class_="cb-text-stump")
-    if info == []:
-        info = prevSession.find_all(class_="cb-text-inprogress")
-        if info == []:
-            info = prevSession.find_all(class_="cb-text-lunch")
-            if info == []:
-                info = prevSession.find_all(class_="cb-text-rain")
-                if info == []:
-                    info = prevSession.find_all(class_="cb-text-tea")
+    info = []
+    for status in match_status:
+        info = prevSession.find_all(class_=status)
+        if info != []:
+            break
+        else:
+            pass
     info = info[0].contents[0]
     prevSession = prevSession.find(class_="cb-text-gray cb-font-16")
     if prevSession is not None:
