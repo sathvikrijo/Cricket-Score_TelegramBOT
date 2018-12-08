@@ -89,6 +89,10 @@ def extract_live_match(match_url):
         info = prevSession.find_all(class_="cb-text-inprogress")
         if info == []:
             info = prevSession.find_all(class_="cb-text-lunch")
+            if info == []:
+                info = prevSession.find_all(class_="cb-text-rain")
+                if info == []:
+                    info = prevSession.find_all(class_="cb-text-tea")
     info = info[0].contents[0]
     prevSession = prevSession.find(class_="cb-text-gray cb-font-16")
     if prevSession is not None:
@@ -141,4 +145,3 @@ def extract_completed_match(match_url):
 
 if __name__ == "__main__":
     match()
-    #extract_completed_match(completed_match_links[3])
