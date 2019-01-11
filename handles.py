@@ -17,6 +17,7 @@ no_reply5 = ReplyKeyboardMarkup(keyboardPage5,True,False)
 var = 0
 
 def start(bot,update):
+    print("checking1...")
     first_name = update.message.chat.first_name
     last_name = update.message.chat.last_name
 
