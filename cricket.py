@@ -33,7 +33,11 @@ def match():
 
     for head in headers:
         match_live = head.find_all(class_="cb-lv-scrs-well cb-lv-scrs-well-live")
+        print(match_live)
         match_completed = head.find_all(class_="cb-lv-scrs-well cb-lv-scrs-well-complete")
+        print()
+        print()
+        print(match_completed)
         for match in match_live:
             live_match.append(match['title'])
             live_match_links.append(match['href'])
