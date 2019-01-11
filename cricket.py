@@ -15,7 +15,9 @@ completed_match_len = 0
 def match():
     page = requests.get(url)
     soup = BeautifulSoup(page.text,'html.parser')
+    print(soup)
     headers = soup.find_all(class_="cb-col cb-col-100 cb-lv-main")
+    print(soup)
 
 
     first_links = soup.find(class_='text-hvr-underline text-bold')
