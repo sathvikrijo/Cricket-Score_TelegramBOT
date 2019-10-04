@@ -1,1 +1,1 @@
-web: python telegrambot.py public/
+worker: python telegrambot.py public/
