@@ -1,1 +1,1 @@
-web: sudo python telegrambot.py public/
+web: su python telegrambot.py public/
