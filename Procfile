@@ -1,2 +1,1 @@
-worker: python telegrambot.py
-web: python telegrambot.py public/
+web: sudo python telegrambot.py public/
