@@ -1,1 +1,1 @@
-web: su python telegrambot.py public/
+web: python telegrambot.py public/
